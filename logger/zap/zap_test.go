@@ -8,7 +8,7 @@ import (
 )
 
 func TestNewLogger(t *testing.T) {
-	zap, err := NewLogger()
+	zap, err := NewZapLogger()
 	if err != nil {
 		t.Errorf("create zap fail: %v\n", err)
 	}
@@ -38,7 +38,7 @@ func TestZaploger(t *testing.T) {
 		Port:     514,
 		Protocol: "udp",
 	}
-	zaplogger, _ := NewLogger(logger.SetFields(map[string]interface{}{
+	zaplogger, _ := NewZapLogger(logger.SetFields(map[string]interface{}{
 		"namespace": "admin",
 	}),
 		logger.SetOut(&rotateFile),

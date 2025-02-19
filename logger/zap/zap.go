@@ -140,7 +140,7 @@ func (z Zaplog) String() string {
 	return "zap"
 }
 
-func NewLogger(opts ...logger.Option) (logger.Logger, error) {
+func NewZapLogger(opts ...logger.Option) (logger.Logger, error) {
 	options := logger.Options{
 		Level:   logger.InfoLevel,
 		Out:     []io.Writer{},
